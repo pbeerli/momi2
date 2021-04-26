@@ -20,10 +20,16 @@ class numpy_get_include(object):
         return numpy.get_include()
 numpy_get_include = numpy_get_include()
 
+cputype = 'arm'
+
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if not on_rtd:
-    extra_compile_args=["-fopenmp"]
-    extra_link_args=["-fopenmp"]
+    if cputype in str(os.uname()).lower():
+        extra_compile_args=["-O3"]
+        extra_link_args=[""]        
+    else:
+        extra_compile_args=["-fopenmp"]
+        extra_link_args=["-fopenmp"]
 
     if use_cython:
         numpy_get_include = str(numpy_get_include)
