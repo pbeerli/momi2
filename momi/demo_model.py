@@ -18,7 +18,6 @@ from .confidence_region import _ConfidenceRegion
 from .events import LeafEvent, SizeEvent, JoinEvent, PulseEvent, GrowthEvent
 from .events import Parameter, ParamsDict
 from .events import _build_demo_graph
-from .demo_plotter import DemographyPlotter
 from .sfs_stats import SfsModelFitStats
 
 
@@ -877,7 +876,7 @@ class DemographicModel(object):
 
         self._set_x(res.x)
         res["parameters"] = self.get_params()
-        res["log_likelihood"] = res.fun
+        res["cross_entropy"] = res.fun
         return res
 
     def optimize(self, method="tnc", jac=True,

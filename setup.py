@@ -57,10 +57,10 @@ if not on_rtd:
 
     install_requires.extend([
         'autograd>=1.2.0', 'numpy>=1.9.0', 'networkx', 'scipy',
-        'pandas', 'msprime', "matplotlib", "seaborn", "pysam"])
+        'pandas', 'msprime', "matplotlib>=3.3", "seaborn", "pysam"])
 
 setup(name='momi',
-      version='2.1.18',
+      version='2.1.19',
       description='MOran Model for Inference',
       author='Jack Kamm, Jonathan Terhorst, Richard Durbin, Yun S. Song',
       author_email='jkamm@stat.berkeley.edu, terhorst@stat.berkeley.edu, yss@eecs.berkeley.edu',
